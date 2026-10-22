@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Felipe Assis de Souza | Engenharia de Software & System Design</title>
+  <meta name="description" content="Engenheiro de Software focado em .NET, Sistemas Distribuídos, System Design e Governança por Especificações (SDD)." />
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              500: '#6366f1',
+              600: '#4f46e5',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 antialiased min-h-screen selection:bg-indigo-500/30 selection:text-indigo-300">
+
+  <!-- Container Central -->
+  <main class="max-w-4xl mx-auto px-6 py-16 space-y-16">
+
+    <!-- Cabeçalho / Perfil -->
+    <header class="space-y-6 border-b border-zinc-800 pb-10">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Felipe Assis de Souza</h1>
+          <p class="text-lg text-zinc-400 mt-1 font-mono">Engenharia de Software • .NET 9 • Sistemas Distribuídos</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/epilef-azuos" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900 border border-zinc-700 hover:border-zinc-500 hover:bg-zinc-800 transition text-sm font-medium">
+            <i data-lucide="github" class="w-4 h-4"></i> GitHub
+          </a>
+          <a href="https://linkedin.com/in/felipeassissouza" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 transition text-sm font-medium text-white shadow-lg shadow-indigo-600/20">
+            <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+      <p class="text-zinc-300 leading-relaxed max-w-2xl text-base">
+        Desenvolvimento de sistemas corporativos com foco em resiliência, baixa latência e integridade transacional. Aplicação de padrões de <strong>System Design</strong>, governança estrita de código com <strong>Spec-Driven Development (SDD)</strong> e testes automatizados contra infraestrutura real via <strong>Testcontainers</strong>.
+      </p>
+    </header>
+
+    <!-- Seção de Pilares de Engenharia -->
+    <section class="space-y-4">
+      <h2 class="text-xs font-semibold uppercase tracking-wider text-zinc-500 font-mono">Padrões de Destaque Aplicados</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
+        <div class="p-3 rounded-lg bg-zinc-900/50 border border-zinc-800/80">
+          <span class="text-indigo-400 font-mono block text-xs mb-1">01. Concorrência</span>
+          <span class="font-medium text-zinc-200">Transactional Outbox</span>
+        </div>
+        <div class="p-3 rounded-lg bg-zinc-900/50 border border-zinc-800/80">
+          <span class="text-indigo-400 font-mono block text-xs mb-1">02. Alta Vazão</span>
+          <span class="font-medium text-zinc-200">Write-Behind Channels</span>
+        </div>
+        <div class="p-3 rounded-lg bg-zinc-900/50 border border-zinc-800/80">
+          <span class="text-indigo-400 font-mono block text-xs mb-1">03. Blindagem</span>
+          <span class="font-medium text-zinc-200">Negative Cache & Jitter</span>
+        </div>
+        <div class="p-3 rounded-lg bg-zinc-900/50 border border-zinc-800/80">
+          <span class="text-indigo-400 font-mono block text-xs mb-1">04. Resiliência</span>
+          <span class="font-medium text-zinc-200">DLQ & Ack Manual</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Projetos -->
+    <section class="space-y-6">
+      <div class="flex items-center justify-between">
+        <h2 class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+          <i data-lucide="layers" class="w-5 h-5 text-indigo-400"></i> Projetos em Destaque
+        </h2>
+        <span class="text-xs text-zinc-500 font-mono">Clean Arch • VSA • EDA</span>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6">
+
+        <!-- Card: NanoLink -->
+        <article class="p-6 rounded-xl bg-zinc-900/60 border border-zinc-800 hover:border-zinc-700 transition flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="flex items-start justify-between gap-4">
+              <h3 class="text-lg font-bold text-white hover:text-indigo-400 transition">
+                <a href="https://github.com/epilef-azuos/NanoLink-Net9-Docker-SQL-Redis" target="_blank" rel="noopener noreferrer">
+                  NanoLink — Encurtador de URLs de Alta Performance
+                </a>
+              </h3>
+              <span class="px-2.5 py-0.5 rounded text-xs font-mono font-medium bg-emerald-950/80 text-emerald-400 border border-emerald-800/60">
+                CI passing
+              </span>
+            </div>
+            <p class="text-sm text-zinc-400 leading-relaxed">
+              Encurtador de URLs em <strong>Vertical Slice Architecture (VSA)</strong> projetado para latência < 5ms no Fast Path. Utiliza <strong>System.Threading.Channels</strong> com política <em>DropOldest</em> para ingestão assíncrona desacoplada de analytics (Write-Behind) e blindagem contra <em>Cache Penetration</em> com Negative Caching no Redis.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-zinc-800/60">
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">.NET 9 Minimal APIs</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">Redis 7</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">PostgreSQL 16</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">MaxMind MMDB</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">Scalar OpenAPI</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">Testcontainers</span>
+          </div>
+        </article>
+
+        <!-- Card: OrderEngine -->
+        <article class="p-6 rounded-xl bg-zinc-900/60 border border-zinc-800 hover:border-zinc-700 transition flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="flex items-start justify-between gap-4">
+              <h3 class="text-lg font-bold text-white hover:text-indigo-400 transition">
+                <a href="https://github.com/epilef-azuos/OrderEngine-DotNet9-Docker" target="_blank" rel="noopener noreferrer">
+                  OrderEngine — Processamento Resiliente de Pedidos
+                </a>
+              </h3>
+              <span class="px-2.5 py-0.5 rounded text-xs font-mono font-medium bg-indigo-950/80 text-indigo-400 border border-indigo-800/60">
+                Event-Driven
+              </span>
+            </div>
+            <p class="text-sm text-zinc-400 leading-relaxed">
+              Sistema de processamento assíncrono aplicando <strong>Transactional Outbox Pattern</strong> para garantia de entrega atômica entre PostgreSQL e RabbitMQ. Inclui controle de concorrência com travas distribuídas no Redis, proteção anti-stampede no cache-aside, consumidor idempotente e roteamento para <strong>Dead Letter Queue (DLQ)</strong>.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-zinc-800/60">
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">.NET 9 Worker Service</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">RabbitMQ (DLX)</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">Redis Distributed Lock</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">EF Core</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">Testcontainers</span>
+          </div>
+        </article>
+
+        <!-- Card: SpecDriven UsersApi -->
+        <article class="p-6 rounded-xl bg-zinc-900/60 border border-zinc-800 hover:border-zinc-700 transition flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="flex items-start justify-between gap-4">
+              <h3 class="text-lg font-bold text-white hover:text-indigo-400 transition">
+                <a href="https://github.com/epilef-azuos/SpecDriven-UsersApi-DotNet8" target="_blank" rel="noopener noreferrer">
+                  Users API — Governança por Spec-Driven Development
+                </a>
+              </h3>
+              <span class="px-2.5 py-0.5 rounded text-xs font-mono font-medium bg-emerald-950/80 text-emerald-400 border border-emerald-800/60">
+                CI passing
+              </span>
+            </div>
+            <p class="text-sm text-zinc-400 leading-relaxed">
+              API RESTful em <strong>Clean Architecture</strong> concebida sob governança estrita de agentes de IA através de especificações versionadas (SDD). Autenticação e autorização Role-Based via JWT, senhas com BCrypt, 21 testes automatizados (xUnit, Moq, FluentAssertions) e esteira de CI no GitHub Actions.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-zinc-800/60">
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">.NET 8</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">Clean Architecture</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">CQRS & MediatR</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">JWT & BCrypt</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">GitHub Actions CI</span>
+          </div>
+        </article>
+
+        <!-- Card: ProductCatalog CQRS -->
+        <article class="p-6 rounded-xl bg-zinc-900/60 border border-zinc-800 hover:border-zinc-700 transition flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <h3 class="text-lg font-bold text-white hover:text-indigo-400 transition">
+              <a href="https://github.com/epilef-azuos/ProductCatalog_CQRS" target="_blank" rel="noopener noreferrer">
+                ProductCatalog — Padrão CQRS com MediatR
+              </a>
+            </h3>
+            <p class="text-sm text-zinc-400 leading-relaxed">
+              Implementação rigorosa de Clean Architecture e segregação de comandos e consultas (CQRS) no ecossistema .NET, estabelecendo o desacoplamento de handlers e regras de domínio ricas.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-zinc-800/60">
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">.NET 8</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">CQRS</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">MediatR</span>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-300">Clean Architecture</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="pt-10 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 font-mono">
+      <p>© 2026 Felipe Assis de Souza. Construído com foco em resiliência técnica.</p>
+      <div class="flex gap-4">
+        <a href="https://github.com/epilef-azuos" class="hover:text-zinc-300 transition">GitHub</a>
+        <a href="https://linkedin.com/in/felipeassissouza" class="hover:text-zinc-300 transition">LinkedIn</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
